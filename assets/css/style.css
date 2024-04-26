@@ -629,7 +629,7 @@ section {
   margin-bottom: 20px;
   padding-bottom: 10px;
   position: relative;
-  text-align: left;
+  /* text-align: left; */
 }
 
 .section-title h2::after {
@@ -650,7 +650,7 @@ section {
   height: 3px;
   background: #777D54;
   bottom: 0;
-  left: calc(100% - 96%);
+  left: calc(50% - 25px);
 }
 
 .section-title p {
