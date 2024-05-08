@@ -1836,3 +1836,9 @@ section {
   font-size: 13px;
 }
 
+.whatspp{
+  position: fixed;
+  bottom: 15%;
+  right: 0;
+  z-index: 55;
+}
