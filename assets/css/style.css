@@ -24,6 +24,11 @@ a:hover {
   text-decoration: none;
 }
 
+ul>li{
+  list-style: none;
+  text-decoration: none;
+}
+
 h1,
 h2,
 h3,
@@ -31,6 +36,10 @@ h4,
 h5,
 h6 {
   font-family: "Roboto", sans-serif;
+}
+
+.bg-theme{
+  background:#777D54 !important;
 }
 
 /*--------------------------------------------------------------
@@ -103,6 +112,37 @@ h6 {
   opacity: 1;
 }
 
+/* -----------------------------------chatbot */
+.chatbot {
+  position: fixed;
+  visibility: hidden;
+  opacity: 0;
+  right: 15px;
+  bottom: 25px;
+  z-index: 996;
+  background: #777D54;
+  width: 40px;
+  height: 40px;
+  border-radius: 4px;
+  transition: all 0.4s;
+}
+
+.chatbot i {
+  font-size: 28px;
+  color: #fff;
+  line-height: 0;
+}
+
+.chatbot:hover {
+  background: #777D54;
+  color: #fff;
+}
+
+.chatbot.active {
+  visibility: visible;
+  opacity: 1;
+}
+
 /*--------------------------------------------------------------
 # Disable aos animation delay on mobile devices
 --------------------------------------------------------------*/
@@ -142,7 +182,6 @@ h6 {
   transition: all 0.5s;
   z-index: 997;
   padding: 0px 0;
-  top: 40px;
   box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
 }
 
@@ -597,6 +636,7 @@ h6 {
   }
 }
 
+
 /*--------------------------------------------------------------
 # Sections General
 --------------------------------------------------------------*/
@@ -991,6 +1031,65 @@ section {
   font-size: 14px;
 }
 
+.service-card {
+  /* width: 190px;
+  height: 254px; */
+  padding: .8em;
+  background: #f5f5f5;
+  position: relative;
+  overflow: visible;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+ }
+ 
+ .service-img {
+  background-color: var(--light-bg) !important;
+  height: 40%;
+  width: 100%;
+  border-radius: .5rem;
+  transition: .3s ease;
+ }
+ 
+ .card-info {
+  padding-top: 10%;
+ }
+ 
+ svg {
+  width: 20px;
+  height: 20px;
+ }
+ 
+ .service-footer {
+  width: 100%;
+  display: flex;
+  justify-content:end;
+  align-items: center;
+  padding-top: 10px;
+  border-top: 1px solid #ddd;
+ }
+ 
+ /*Text*/
+ .text-title {
+  font-weight: 900;
+  font-size: 1.2em;
+  line-height: 1.5;
+ }
+ 
+ .text-body {
+  font-size: .9em;
+  padding-bottom: 10px;
+ }
+ 
+ /*Button*/
+ .card-button {
+  border: 1px solid #252525;
+  display: flex;
+  padding: .3em;
+  cursor: pointer;
+  border-radius: 50px;
+  transition: .3s ease-in-out;
+ }
+ 
+
 /*--------------------------------------------------------------
 # Appointments
 --------------------------------------------------------------*/
@@ -1253,86 +1352,9 @@ section {
   background-color: #777D54;
 }
 
-/*--------------------------------------------------------------
-# Doctors
---------------------------------------------------------------*/
-.doctors .member {
-  margin-bottom: 20px;
-  overflow: hidden;
-  text-align: center;
-  border-radius: 4px;
-  background: #fff;
-  box-shadow: 0px 2px 15px rgba(63, 187, 192, 0.1);
-}
-
-.doctors .member .member-img {
-  position: relative;
-  overflow: hidden;
-}
-
-.doctors .member .social {
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  height: 40px;
-  opacity: 0;
-  transition: ease-in-out 0.3s;
-  background: rgba(255, 255, 255, 0.85);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.doctors .member .social a {
-  transition: color 0.3s;
-  color: #555555;
-  margin: 0 10px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.doctors .member .social a i {
-  line-height: 0;
-}
-
-.doctors .member .social a:hover {
-  color: #777D54;
-}
-
-.doctors .member .social i {
-  font-size: 18px;
-  margin: 0 2px;
-}
-
-.doctors .member .member-info {
-  padding: 25px 15px;
-}
-
-.doctors .member .member-info h4 {
-  font-weight: 700;
-  margin-bottom: 5px;
-  font-size: 18px;
-  color: #555555;
-}
-
-.doctors .member .member-info span {
-  display: block;
-  font-size: 13px;
-  font-weight: 400;
-  color: #aaaaaa;
-}
-
-.doctors .member .member-info p {
-  font-style: italic;
-  font-size: 14px;
-  line-height: 26px;
-  color: #777777;
-}
-
-.doctors .member:hover .social {
-  opacity: 1;
+/*--------------------------------------------------------------*/
+.doctor{
+  margin-top: 7.5%;
 }
 
 /*--------------------------------------------------------------
@@ -1679,7 +1701,6 @@ section {
 --------------------------------------------------------------*/
 #footer {
   background: #eeeeee;
-  padding: 0 0 30px 0;
   color: #555555;
   font-size: 14px;
 }
@@ -1715,7 +1736,7 @@ section {
   color: #fff;
   line-height: 1;
   padding: 8px 0;
-  margin-right: 4px;
+  margin-right: 10px;
   border-radius: 4px;
   text-align: center;
   width: 36px;
@@ -1723,10 +1744,7 @@ section {
   transition: 0.3s;
 }
 
-#footer .footer-top .social-links a:hover {
-  background: black;
-  text-decoration: none;
-}
+
 
 #footer .footer-top h4 {
   font-size: 16px;
